@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Hossam El Din - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover, nav a.active {
+            color: #3498db;
+        }
+
+        .page {
+            display: none;
+            padding: 100px 0 50px;
+            min-height: 100vh;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #2980b9;
+        }
+
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-img {
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+
+        .resume-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .download-btn {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .download-btn a {
+            background: #3498db;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .download-btn a:hover {
+            background: #2980b9;
+        }
+
+        .portfolio-filters {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .filter-btn {
+            background: #ecf0f1;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .filter-btn.active {
+            background: #3498db;
+            color: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(52, 152, 219, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-title {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-tech {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-item span {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #2980b9;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            font-size: 1.5rem;
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #2980b9;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .experience-item h3, .education-item h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .experience-item .company, .education-item .institution {
+            color: #3498db;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .date, .education-item .date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .about-section,
+            .contact-section {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+    <script>
+        // Updated project data with actual image paths and multiple images
+        const projectData = {
+            mindspeak: {
+                title: "MindSpeak – AI-Driven Mobile App for Autism Communication Support",
+                tech: "Flutter, Firebase, AI/ML",
+                images: [
+                    "assets/img/mindspeak/image1.jpg",
+                    "assets/img/mindspeak/image2.jpg", 
+                    "assets/img/mindspeak/image3.jpg",
+                    "assets/img/mindspeak/image4.jpg",
+                    "assets/img/mindspeak/image5.jpg"
+                ],
+                description: "Developed a mobile application powered by AI to enhance communication skills in children with Autism Spectrum Disorder (ASD), integrating real-time speech processing, emotion recognition, and interactive 3D avatars. Led end-to-end development using Flutter and Firebase, incorporating facial and voice emotion detection, eye gaze tracking, and behavior analysis. Designed an adaptive therapy assistant that delivers personalized interactions, empowering therapists and parents with automated progress reports and real-time feedback.",
+                features: [
+                    "Real-time speech processing",
+                    "Emotion recognition technology", 
+                    "Interactive 3D avatars",
+                    "Eye gaze tracking",
+                    "Behavior analysis",
+                    "Automated progress reports",
+                    "Real-time feedback system"
+                ],
+                github: "https://github.com/yourusername/mindspeak"
+            },
+            ministry: {
+                title: "Public Relations Contractual Committee System for the Ministry of Petroleum Egypt",
+                tech: "Angular",
+                images: [
+                    "assets/img/ministry/image1.jpg",
+                    "assets/img/ministry/image2.jpg",
+                    "assets/img/ministry/image3.jpg",
+                    "assets/img/ministry/image4.jpg",
+                    "assets/img/ministry/image5.jpg"
+                ],
+                description: "A modern digital platform designed to simplify hotel bookings and contract workflows for PR teams, vendors, legal advisors, and staff. It enhances collaboration, automates processes, and delivers a seamless, user-friendly experience.",
+                features: [
+                    "Hotel booking management",
+                    "Contract workflow automation",
+                    "Multi-user collaboration",
+                    "Legal advisor integration",
+                    "Staff management system",
+                    "Process automation"
+                ],
+                github: "https://github.com/yourusername/ministry-pr-system"
+            },
+            tourism: {
+                title: "Tourism and Recommendation System",
+                tech: "C#, .NET",
+                images: [
+                    "assets/img/tourism/image1.jpg",
+                    "assets/img/tourism/image2.jpg",
+                    "assets/img/tourism/image3.jpg",
+                    "assets/img/tourism/image4.jpg",
+                    "assets/img/tourism/image5.jpg"
+                ],
+                description: "A data-driven travel assistant that delivers personalized destination recommendations based on user preferences. Seamlessly integrates booking for flights, hotels, transport, and activities—all in one intuitive platform.",
+                features: [
+                    "Personalized recommendations",
+                    "Flight booking integration",
+                    "Hotel reservation system",
+                    "Transport booking",
+                    "Activity planning",
+                    "User preference analysis"
+                ],
+                github: "https://github.com/yourusername/tourism-system"
+            },
+            ecommerce: {
+                title: "E-Commerce Web Application",
+                tech: "HTML, CSS, JavaScript, Spring Boot, SQL",
+                images: [
+                    "assets/img/ecommerce/image1.jpg",
+                    "assets/img/ecommerce/image2.jpg",
+                    "assets/img/ecommerce/image3.jpg",
+                    "assets/img/ecommerce/image4.jpg",
+                    "assets/img/ecommerce/image5.jpg"
+                ],
+                description: "Built with HTML, CSS, JavaScript, Spring Boot, and SQL, this dynamic web application supports product browsing, cart management, secure user authentication, and order processing.",
+                features: [
+                    "Product catalog",
+                    "Shopping cart management",
+                    "User authentication",
+                    "Order processing",
+                    "Payment integration",
+                    "Admin dashboard"
+                ],
+                github: "https://github.com/yourusername/ecommerce-app"
+            },
+            eama: {
+                title: "Eama Management System",
+                tech: "HTML, CSS, JavaScript, PHP, SQL",
+                images: [
+                    "assets/img/eama/image1.jpg",
+                    "assets/img/eama/image2.jpg",
+                    "assets/img/eama/image3.jpg",
+                    "assets/img/eama/image4.jpg",
+                    "assets/img/eama/image5.jpg"
+                ],
+                description: "A smart shopping platform offering personalized recommendations, AR features, and multi-vendor access with secure payments. Powered by AI.",
+                features: [
+                    "AI-powered recommendations",
+                    "Augmented Reality features",
+                    "Multi-vendor support",
+                    "Secure payment system",
+                    "Smart shopping experience",
+                    "Vendor management"
+                ],
+                github: "https://github.com/yourusername/eama-system"
+            },
+            restaurant: {
+                title: "Restaurant Web Application",
+                tech: "HTML, CSS, JavaScript, Python, Django",
+                images: [
+                    "assets/img/restaurant/image1.jpg",
+                    "assets/img/restaurant/image2.jpg",
+                    "assets/img/restaurant/image3.jpg",
+                    "assets/img/restaurant/image4.jpg",
+                    "assets/img/restaurant/image5.jpg"
+                ],
+                description: "Designed a modern, responsive website for Ausii Restaurant that allows users to browse the menu, place online orders, and make reservations with ease.",
+                features: [
+                    "Interactive menu display",
+                    "Online ordering system",
+                    "Table reservation",
+                    "Responsive design",
+                    "Order tracking",
+                    "Customer reviews"
+                ],
+                github: "https://github.com/yourusername/restaurant-app"
+            },
+            qa: {
+                title: "Quality Assurance API Testing and Automation",
+                tech: "Selenium WebDriver, TestNG, Java",
+                images: [
+                    "assets/img/qa/image1.jpg",
+                    "assets/img/qa/image2.jpg",
+                    "assets/img/qa/image3.jpg",
+                    "assets/img/qa/image4.jpg",
+                    "assets/img/qa/image5.jpg"
+                ],
+                description: "This project involved API testing, automation using Selenium WebDriver and TestNG with the Page Object Model (POM) design pattern. The primary objective was to ensure the quality and reliability of web applications by validating API functionality, performance, and security.",
+                features: [
+                    "API testing framework",
+                    "Selenium automation",
+                    "Page Object Model design",
+                    "Performance testing",
+                    "Security validation",
+                    "Test reporting"
+                ],
+                github: "https://github.com/yourusername/qa-automation"
+            }
+        };
+
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function filterProjects(category) {
+            const projects = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter projects
+            projects.forEach(project => {
+                if (category === 'all' || project.classList.contains(category)) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        }
+
+        function showProjectDetails(projectId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show project details page
+            document.getElementById('project-details').classList.add('active');
+            
+            // Update project details content
+            updateProjectDetails(projectId);
+        }
+
+        function updateProjectDetails(projectId) {
+            const project = projectData[projectId];
+            if (project) {
+                document.getElementById('project-title').textContent = project.title;
+                document.getElementById('project-tech').textContent = project.tech;
+                document.getElementById('project-description').textContent = project.description;
+                
+                // Update project images (5 images)
+                for (let i = 1; i <= 5; i++) {
+                    const projectImage = document.getElementById(`project-image-${i}`);
+                    const imagePlaceholder = projectImage.nextElementSibling;
+                    
+                    if (project.images && project.images[i-1]) {
+                        projectImage.src = project.images[i-1];
+                        projectImage.style.display = 'block';
+                        imagePlaceholder.style.display = 'none';
+                    } else {
+                        projectImage.style.display = 'none';
+                        imagePlaceholder.style.display = 'block';
+                    }
+                }
+                
+                const featuresList = document.getElementById('project-features');
+                featuresList.innerHTML = '';
+                project.features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.textContent = feature;
+                    featuresList.appendChild(li);
+                });
+                
+                document.getElementById('github-link').href = project.github;
+            }
+        }
+
+        function goBackToPortfolio() {
+            showPage('portfolio');
+        }
+
+        function downloadCV() {
+            alert('CV download functionality would be implemented here. You can link to your actual CV file.');
+        }
+
+        // Contact form submission
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && subject && message) {
+                alert('Thank you for your message! I will get back to you soon.');
+                // Reset form
+                document.getElementById('contactForm').reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Mohamed Hossam</div>
+            <ul>
+                <li><a href="#" onclick="showPage('home')" class="active">HOME</a></li>
+                <li><a href="#" onclick="showPage('about')">ABOUT</a></li>
+                <li><a href="#" onclick="showPage('resume')">RESUME</a></li>
+                <li><a href="#" onclick="showPage('portfolio')">PORTFOLIO</a></li>
+                <li><a href="#" onclick="showPage('contact')">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <div class="hero">
+            <div class="container">
+                <img src="./assets/img/ana.jpg" alt="Mohamed Hossam El Din" class="profile-img">
+                <h1>Mohamed Hossam El Din</h1>
+                <h2>Senior Software Engineer</h2>
+                <p>Highly motivated Software Engineer and Quality Engineer with a passion for creating user-centered applications. Seeking opportunities to leverage strong leadership and teamwork skills gained from volunteering experiences and contribute to impactful projects in a professional setting.</p>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/mohamed-hussam-hamdy-9396692b6/" target="_blank">Connect on LinkedIn</a>
+                    <a href="https://github.com/mohamedhussammm" target="_blank">Connect on Github</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">7</div>
+                    <div>Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div>Connections</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1 Year</div>
+                    <div>Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-section">
+                <div class="about-text">
+                    <h3>Senior Software Engineer</h3>
+                    <p>Passionate about building intelligent solutions that bridge technology and human needs, I specialize in developing user-centered applications with robust quality assurance frameworks. My journey in computer science has equipped me with full-stack development capabilities and AI/ML expertise, which I've applied to meaningful projects like assistive technologies for autism spectrum disorder.</p>
+                    
+                    <p>What drives me is the intersection of innovation and precision - whether crafting intuitive interfaces or implementing rigorous testing protocols. My approach combines technical discipline with creative problem-solving, ensuring deliverables that are both functionally excellent and empathetically designed.</p>
+                    
+                    <p>Currently pursuing my Computer Science degree at Misr International University, I actively seek opportunities to contribute my skills in software engineering, quality assurance, and AI development to impactful projects. Let's build something remarkable together.</p>
+                </div>
+                <div>
+                    <img src="./assets/img/ana.jpg" alt="Mohamed Hossam El Din" class="about-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESUME PAGE -->
+    <div id="resume" class="page">
+        <div class="container">
+            <h2 class="section-title">Resume</h2>
+            <div class="resume-content">
+                <div class="experience-section">
+                    <h3>Experience</h3>
+                    <div class="experience-item">
+                        <h4>Internship Program</h4>
+                        <div class="company">Digital Lab</div>
+                        <div class="date">07/2024 – 09/2024, Cairo, Egypt</div>
+                        <p>Worked on Ministry of Petroleum Egypt project. Demonstrated self-motivation and skills to learn new technologies.</p>
+                    </div>
+                    <div class="experience-item">
+                        <h4>Internship Program</h4>
+                        <div class="company">Qatar National Bank (QNB)</div>
+                        <div class="date">07/2024 – 08/2024, Cairo, Egypt</div>
+                    </div>
+                </div>
+
+                <div class="education-section">
+                    <h3>Education</h3>
+                    <div class="education-item">
+                        <h4>Computer Science</h4>
+                        <div class="institution">Misr International University</div>
+                        <div class="date">08/2025, Cairo, Egypt</div>
+                    </div>
+                    <div class="education-item">
+                        <h4>School</h4>
+                        <div class="institution">Patriarchal College ex. Frere School</div>
+                        <div class="date">08/2021, Cairo, Egypt</div>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <h3>Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Programming Languages</h4>
+                            <ul>
+                                <li>C++, Java, C#, Python</li>
+                                <li>JavaScript, PHP, TypeScript</li>
+                                <li>Dart, Kotlin</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Web Technologies</h4>
+                            <ul>
+                                <li>HTML5, CSS3, Bootstrap</li>
+                                <li>Tailwind CSS, Node.js</li>
+                                <li>Angular</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Frameworks & Libraries</h4>
+                            <ul>
+                                <li>.NET Core, ASP.NET</li>
+                                <li>Spring Boot, Django, Flask</li>
+                                <li>Flutter, JavaFX, Express.js</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>AI/ML & Data Science</h4>
+                            <ul>
+                                <li>TensorFlow, PyTorch</li>
+                                <li>Machine Learning, Deep Learning</li>
+                                <li>NLP, Computer Vision</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="languages-section">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li><strong>Arabic:</strong> Native</li>
+                        <li><strong>English:</strong> Fluent</li>
+                        <li><strong>German:</strong> B2 Goethe</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="download-btn">
+                <a href="#" onclick="downloadCV()">Download CV</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PORTFOLIO PAGE -->
+    <div id="portfolio" class="page">
+        <div class="container">
+            <h2 class="section-title">My Portfolio</h2>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" onclick="filterProjects('all')">All</button>
+                <button class="filter-btn" onclick="filterProjects('website')">Website</button>
+                <button class="filter-btn" onclick="filterProjects('mobile')">Mobile Application</button>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card mobile" onclick="showProjectDetails('mindspeak')">
+                    <div class="project-img">
+                        <img src="assets/img/mind.jpg" alt="MindSpeak Project" />
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-title">MindSpeak</div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tech">Flutter, Firebase, AI/ML</div>
+                        <p>AI-Driven Mobile App for Autism Communication Support</p>
+                    </div>
+                </div>
+
+                <div class="project-card website" onclick="showProjectDetails('ministry')">
+                    <div class="project-img">
+                        <img src="assets/img/pdash.png" alt="Ministry PR System" />
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-title">Ministry PR System</div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tech">Angular</div>
+                        <p>Public Relations Contractual Committee System</p>
+                    </div>
+                </div>
+
+                <div class="project-card website" onclick="showProjectDetails('tourism')">
+                    <div class="project-img">
+                        <img src="assets/img/trips.png" alt="Tourism & Recommendation System" />
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-title">Tourism & Recommendation System</div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tech">C#, .NET</div>
+                        <p>Data-driven travel assistant with personalized recommendations</p>
+                    </div>
+                </div>
+
+                
+
+                <div class="project-card website" onclick="showProjectDetails('eama')">
+                    <div class="project-img">
+                        <img src="assets/img/e.jpg" alt="Eama Management System" />
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-title">Eama Management System</div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tech">HTML, CSS, JavaScript, PHP, SQL</div>
+                        <p>Smart shopping platform with AR features and AI recommendations</p>
+                    </div>
+                </div>
+
+                <div class="project-card website" onclick="showProjectDetails('restaurant')">
+                    <div class="project-img">
+                        <img src="assets/img/home1.png" alt="Restaurant Web Application" />
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-title">Restaurant Web Application</div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tech">HTML, CSS, JavaScript, Python, Django</div>
+                        <p>Modern, responsive website for Ausii Restaurant</p>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- PROJECT DETAILS PAGE -->
+    <div id="project-details" class="page">
+        <div class="container">
+            <button onclick="goBackToPortfolio()" style="background: #3498db; color: white; padding: 10px 20px; border: none; border-radius: 5px; margin-bottom: 30px; cursor: pointer;">← Back to Portfolio</button>
+            
+            <div class="project-detail-content" style="background: white; padding: 40px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <h1 id="project-title" style="color: #2c3e50; margin-bottom: 20px;">Project Title</h1>
+                <div id="project-tech" style="color: #3498db; font-weight: bold; margin-bottom: 20px; font-size: 1.1rem;">Technologies Used</div>
+                
+                <div style="margin-bottom: 30px;">
+                    <h3 style="color: #2c3e50; margin-bottom: 15px;">Project Screenshots</h3>
+                    <div id="project-images-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px;">
+                        <div class="project-detail-img-container" style="position: relative; height: 150px; background: #f8f9fa; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                            <img id="project-image-1" src="" alt="Project Image 1" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <span class="image-placeholder" style="color: #7f8c8d; font-size: 0.9rem;">Image 1</span>
+                        </div>
+                        <div class="project-detail-img-container" style="position: relative; height: 150px; background: #f8f9fa; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                            <img id="project-image-2" src="" alt="Project Image 2" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <span class="image-placeholder" style="color: #7f8c8d; font-size: 0.9rem;">Image 2</span>
+                        </div>
+                        <div class="project-detail-img-container" style="position: relative; height: 150px; background: #f8f9fa; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                            <img id="project-image-3" src="" alt="Project Image 3" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <span class="image-placeholder" style="color: #7f8c8d; font-size: 0.9rem;">Image 3</span>
+                        </div>
+                        <div class="project-detail-img-container" style="position: relative; height: 150px; background: #f8f9fa; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                            <img id="project-image-4" src="" alt="Project Image 4" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <span class="image-placeholder" style="color: #7f8c8d; font-size: 0.9rem;">Image 4</span>
+                        </div>
+                        <div class="project-detail-img-container" style="position: relative; height: 150px; background: #f8f9fa; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                            <img id="project-image-5" src="" alt="Project Image 5" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <span class="image-placeholder" style="color: #7f8c8d; font-size: 0.9rem;">Image 5</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 style="color: #2c3e50; margin-bottom: 15px;">Description</h3>
+                <p id="project-description" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px;">Project description will appear here.</p>
+                
+                <h3 style="color: #2c3e50; margin-bottom: 15px;">Key Features</h3>
+                <ul id="project-features" style="font-size: 1rem; line-height: 1.6; margin-bottom: 30px;">
+                    <!-- Features will be dynamically added here -->
+                </ul>
+                
+               
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 50px;">Get In Touch</p>
+            <p style="text-align: center; margin-bottom: 50px;">Have a project in mind or want to collaborate? Feel free to reach out through the contact form or directly via email or phone.</p>
+            
+            <div class="contact-section">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <div>
+                            <h4>Email</h4>
+                            <p>mohamedhussam356@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>01150565129</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Cairo, Nasr City</p>
+                        </div>
+                    </div>
+                    
+                    <h4 style="margin-top: 30px;">Follow Me</h4>
+                    <div class="social-icons">
+                        <a href="#" title="Instagram">📸</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="Facebook">📘</a>
+                        <a href="#" title="YouTube">🎥</a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Message</h3>
+                    <form id="contactForm" onsubmit="event.preventDefault(); submitForm();">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: #2c3e50; color: white; text-align: center; padding: 20px 0; margin-top: 50px;">
+        <div class="container">
+            <p>&copy; 2025 Mohamed Hossam El Din. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
