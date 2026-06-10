@@ -1,0 +1,306 @@
+// Updated project data with actual image paths and multiple images
+const projectData = {
+    mindspeak: {
+        title: "MindSpeak – AI-Driven Mobile App for Autism Communication Support",
+        tech: "Flutter, Firebase, AI/ML",
+        images: [
+            "assets/img/mindspeak/image1.jpg",
+            "assets/img/mindspeak/image2.jpg", 
+            "assets/img/mindspeak/image3.jpg",
+            "assets/img/mindspeak/image4.jpg",
+            "assets/img/mindspeak/image5.jpg"
+        ],
+        description: "Developed a mobile application powered by AI to enhance communication skills in children with Autism Spectrum Disorder (ASD), integrating real-time speech processing, emotion recognition, and interactive 3D avatars. Led end-to-end development using Flutter and Firebase, incorporating facial and voice emotion detection, eye gaze tracking, and behavior analysis. Designed an adaptive therapy assistant that delivers personalized interactions, empowering therapists and parents with automated progress reports and real-time feedback.",
+        features: [
+            "Real-time speech processing",
+            "Emotion recognition technology", 
+            "Interactive 3D avatars",
+            "Eye gaze tracking",
+            "Behavior analysis",
+            "Automated progress reports",
+            "Real-time feedback system"
+        ],
+        github: "https://github.com/mohamedhussammm/mindspeak"
+    },
+    ministry: {
+        title: "Public Relations Contractual Committee System for the Ministry of Petroleum Egypt",
+        tech: "Angular",
+        images: [
+            "assets/img/ministry/image1.jpg",
+            "assets/img/ministry/image2.jpg",
+            "assets/img/ministry/image3.jpg",
+            "assets/img/ministry/image4.jpg",
+            "assets/img/ministry/image5.jpg"
+        ],
+        description: "A modern digital platform designed to simplify hotel bookings and contract workflows for PR teams, vendors, legal advisors, and staff. It enhances collaboration, automates processes, and delivers a seamless, user-friendly experience.",
+        features: [
+            "Hotel booking management",
+            "Contract workflow automation",
+            "Multi-user collaboration",
+            "Legal advisor integration",
+            "Staff management system",
+            "Process automation"
+        ],
+        github: "https://github.com/mohamedhussammm/ministry-pr-system"
+    },
+    tourism: {
+        title: "Tourism and Recommendation System",
+        tech: "C#, .NET",
+        images: [
+            "assets/img/tourism/image1.jpg",
+            "assets/img/tourism/image2.jpg",
+            "assets/img/tourism/image3.jpg",
+            "assets/img/tourism/image4.jpg",
+            "assets/img/tourism/image5.jpg"
+        ],
+        description: "A data-driven travel assistant that delivers personalized destination recommendations based on user preferences. Seamlessly integrates booking for flights, hotels, transport, and activities—all in one intuitive platform.",
+        features: [
+            "Personalized recommendations",
+            "Flight booking integration",
+            "Hotel reservation system",
+            "Transport booking",
+            "Activity planning",
+            "User preference analysis"
+        ],
+        github: "https://github.com/mohamedhussammm/tourism-system"
+    },
+    eama: {
+        title: "Eama Management System",
+        tech: "HTML, CSS, JavaScript, PHP, SQL",
+        images: [
+            "assets/img/eama/image1.jpg",
+            "assets/img/eama/image2.jpg",
+            "assets/img/eama/image3.jpg",
+            "assets/img/eama/image4.jpg",
+            "assets/img/eama/image5.jpg"
+        ],
+        description: "A smart shopping platform offering personalized recommendations, AR features, and multi-vendor access with secure payments. Powered by AI.",
+        features: [
+            "AI-powered recommendations",
+            "Augmented Reality features",
+            "Multi-vendor support",
+            "Secure payment system",
+            "Smart shopping experience",
+            "Vendor management"
+        ],
+        github: "https://github.com/mohamedhussammm/eama-system"
+    },
+    restaurant: {
+        title: "Restaurant Web Application",
+        tech: "HTML, CSS, JavaScript, Python, Django",
+        images: [
+            "assets/img/restaurant/image1.jpg",
+            "assets/img/restaurant/image2.jpg",
+            "assets/img/restaurant/image3.jpg",
+            "assets/img/restaurant/image4.jpg",
+            "assets/img/restaurant/image5.jpg"
+        ],
+        description: "Designed a modern, responsive website for Ausii Restaurant that allows users to browse the menu, place online orders, and make reservations with ease.",
+        features: [
+            "Interactive menu display",
+            "Online ordering system",
+            "Table reservation",
+            "Responsive design",
+            "Order tracking",
+            "Customer reviews"
+        ],
+        github: "https://github.com/mohamedhussammm/restaurant-app"
+    },
+    qa: {
+        title: "Quality Assurance API Testing and Automation",
+        tech: "Selenium WebDriver, TestNG, Java",
+        images: [
+            "assets/img/qa/image1.jpg",
+            "assets/img/qa/image2.jpg",
+            "assets/img/qa/image3.jpg",
+            "assets/img/qa/image4.jpg",
+            "assets/img/qa/image5.jpg"
+        ],
+        description: "This project involved API testing, automation using Selenium WebDriver and TestNG with the Page Object Model (POM) design pattern. The primary objective was to ensure the quality and reliability of web applications by validating API functionality, performance, and security.",
+        features: [
+            "API testing framework",
+            "Selenium automation",
+            "Page Object Model design",
+            "Performance testing",
+            "Security validation",
+            "Test reporting"
+        ],
+        github: "https://github.com/mohamedhussammm/qa-automation"
+    },
+    bond: {
+        title: "Bond",
+        tech: "TBD",
+        images: [
+            "assets/img/Bond/Screenshot_20260610-164713.jpg",
+            "assets/img/Bond/Screenshot_20260610-164720.jpg",
+            "assets/img/Bond/Screenshot_20260610-164726.jpg",
+            "assets/img/Bond/Screenshot_20260610-164731.jpg",
+            "assets/img/Bond/Screenshot_20260610-164744.jpg"
+        ],
+        description: "Project description coming soon.",
+        features: [
+            "Feature 1 coming soon",
+            "Feature 2 coming soon",
+            "Feature 3 coming soon"
+        ],
+        github: "https://github.com/mohamedhussammm/bond"
+    },
+    marketscan: {
+        title: "Market Scan",
+        tech: "TBD",
+        images: [
+            "assets/img/Market-scan/Screenshot_20260610-165226.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-165256.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-165304.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-170100.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-170114.jpg"
+        ],
+        description: "Project description coming soon.",
+        features: [
+            "Feature 1 coming soon",
+            "Feature 2 coming soon",
+            "Feature 3 coming soon"
+        ],
+        github: "https://github.com/mohamedhussammm/marketscan"
+    },
+    aileadgeneration: {
+        title: "AI Lead Generation",
+        tech: "TBD",
+        images: [
+            "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172126.png",
+            "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172202.png",
+            "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172218.png",
+            "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172229.png",
+            "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172249.png"
+        ],
+        description: "Project description coming soon.",
+        features: [
+            "Feature 1 coming soon",
+            "Feature 2 coming soon",
+            "Feature 3 coming soon"
+        ],
+        github: "https://github.com/mohamedhussammm/aileadgeneration"
+    }
+};
+
+function showPage(pageId) {
+    // Hide all pages
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.classList.remove('active'));
+    
+    // Show selected page
+    document.getElementById(pageId).classList.add('active');
+    
+    // Update navigation
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => link.classList.remove('active'));
+    if(event && event.target) {
+        event.target.classList.add('active');
+    }
+    
+    // Scroll to top smoothly
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+function filterProjects(category) {
+    const projects = document.querySelectorAll('.project-card');
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    // Update active button
+    buttons.forEach(btn => btn.classList.remove('active'));
+    if(event && event.target) {
+        event.target.classList.add('active');
+    }
+    
+    // Filter projects
+    projects.forEach(project => {
+        if (category === 'all' || project.classList.contains(category)) {
+            project.style.display = 'block';
+            project.style.animation = 'fadeIn 0.5s ease-out forwards';
+        } else {
+            project.style.display = 'none';
+        }
+    });
+}
+
+function showProjectDetails(projectId) {
+    // Hide all pages
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.classList.remove('active'));
+    
+    // Show project details page
+    document.getElementById('project-details').classList.add('active');
+    
+    // Update project details content
+    updateProjectDetails(projectId);
+    
+    // Scroll to top
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+function updateProjectDetails(projectId) {
+    const project = projectData[projectId];
+    if (project) {
+        document.getElementById('project-title').textContent = project.title;
+        document.getElementById('project-tech').textContent = project.tech;
+        document.getElementById('project-description').textContent = project.description;
+        
+        // Update project images (5 images)
+        for (let i = 1; i <= 5; i++) {
+            const projectImage = document.getElementById(`project-image-${i}`);
+            const imagePlaceholder = projectImage.nextElementSibling;
+            
+            if (project.images && project.images[i-1]) {
+                projectImage.src = project.images[i-1];
+                projectImage.style.display = 'block';
+                imagePlaceholder.style.display = 'none';
+            } else {
+                projectImage.style.display = 'none';
+                imagePlaceholder.style.display = 'block';
+            }
+        }
+        
+        const featuresList = document.getElementById('project-features');
+        featuresList.innerHTML = '';
+        project.features.forEach(feature => {
+            const li = document.createElement('li');
+            li.textContent = feature;
+            featuresList.appendChild(li);
+        });
+        
+        const githubLink = document.getElementById('github-link');
+        if(githubLink) {
+            githubLink.href = project.github;
+        }
+    }
+}
+
+function goBackToPortfolio() {
+    showPage('portfolio');
+}
+
+function downloadCV() {
+    alert('CV download functionality would be implemented here. You can link to your actual CV file.');
+}
+
+// Contact form submission
+function submitForm() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    if (name && email && subject && message) {
+        alert('Thank you for your message! I will get back to you soon.');
+        // Reset form
+        document.getElementById('contactForm').reset();
+    } else {
+        alert('Please fill in all fields.');
+    }
+}
