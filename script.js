@@ -146,8 +146,8 @@ const projectData = {
         github: "https://github.com/mohamedhussammm/bond"
     },
     marketscan: {
-        title: "Market Scan",
-        tech: "TBD",
+        title: "Market Scan – Intelligent Retail POS & Inventory System",
+        tech: "Flutter, Node.js, Express.js, MongoDB, Python, SQLite",
         images: [
             "assets/img/Market-scan/Screenshot_20260610-165226.jpg",
             "assets/img/Market-scan/Screenshot_20260610-165256.jpg",
@@ -155,17 +155,21 @@ const projectData = {
             "assets/img/Market-scan/Screenshot_20260610-170100.jpg",
             "assets/img/Market-scan/Screenshot_20260610-170114.jpg"
         ],
-        description: "Project description coming soon.",
+        description: "A robust Point of Sale (POS) and Retail Management solution integrating a cross-platform mobile app with a Node.js backend. Features fast checkout via mobile barcode scanning, real-time inventory tracking, offline capabilities using SQLite, and a custom Python web scraping pipeline for bulk-importing localized real-world product data.",
         features: [
-            "Feature 1 coming soon",
-            "Feature 2 coming soon",
-            "Feature 3 coming soon"
+            "Mobile Barcode Scanning for fast checkouts",
+            "Automated Data Ingestion via Python web scrapers",
+            "Real-time Stock Tracking and Inventory Management",
+            "Supplier & Role Management with secure authentication",
+            "Real-time Analytics & Dashboard with interactive charts",
+            "Offline-Ready Capabilities using local SQLite",
+            "Shift & Cash Management for tracking daily operations"
         ],
         github: "https://github.com/mohamedhussammm/marketscan"
     },
     aileadgeneration: {
-        title: "AI Lead Generation",
-        tech: "TBD",
+        title: "LeadForge AI — Autonomous Lead Generation Platform",
+        tech: "React, TypeScript, FastAPI, Python, SQLite, Google Gemini AI",
         images: [
             "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172126.png",
             "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172202.png",
@@ -173,11 +177,14 @@ const projectData = {
             "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172229.png",
             "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172249.png"
         ],
-        description: "Project description coming soon.",
+        description: "A comprehensive, autonomous lead generation and pipeline management platform designed for freelancers and agencies. It continuously scans social networks to identify high-intent prospects actively looking for specific services. Uses Google Gemini 1.5 AI to analyze and score leads, and dynamically generates highly tailored, platform-specific outreach messages.",
         features: [
-            "Feature 1 coming soon",
-            "Feature 2 coming soon",
-            "Feature 3 coming soon"
+            "Automated Data Mining via Google Custom Search & Serper APIs",
+            "AI-Powered Scoring & Qualification with Google Gemini 1.5",
+            "Generative AI Outreach for personalized messaging pipelines",
+            "High-performance RESTful API using FastAPI",
+            "Dynamic dashboard for tracking conversion probabilities",
+            "Multi-Channel Notifications via Telegram & Email"
         ],
         github: "https://github.com/mohamedhussammm/aileadgeneration"
     }
