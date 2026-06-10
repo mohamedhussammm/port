@@ -193,13 +193,13 @@ const projectData = {
         title: "LeadForge AI — Autonomous Lead Generation Platform",
         tech: "React, TypeScript, FastAPI, Python, SQLite, Google Gemini AI",
         images: [
-            "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172126.png",
-            "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172202.png",
-            "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172218.png",
-            "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172229.png",
-            "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172249.png",
-            "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172301.png",
-            "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172319.png"
+            "assets/img/Ai-Lead-Generation/Screenshot_2026-06-10_172126.png",
+            "assets/img/Ai-Lead-Generation/Screenshot_2026-06-10_172202.png",
+            "assets/img/Ai-Lead-Generation/Screenshot_2026-06-10_172218.png",
+            "assets/img/Ai-Lead-Generation/Screenshot_2026-06-10_172229.png",
+            "assets/img/Ai-Lead-Generation/Screenshot_2026-06-10_172249.png",
+            "assets/img/Ai-Lead-Generation/Screenshot_2026-06-10_172301.png",
+            "assets/img/Ai-Lead-Generation/Screenshot_2026-06-10_172319.png"
         ],
         description: "A comprehensive, autonomous lead generation and pipeline management platform designed for freelancers and agencies. It continuously scans social networks to identify high-intent prospects actively looking for specific services. Uses Google Gemini 1.5 AI to analyze and score leads, and dynamically generates highly tailored, platform-specific outreach messages.",
         features: [
