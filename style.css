@@ -245,7 +245,7 @@ nav a:hover::after, nav a.active::after {
 /* About Section */
 .about-section {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1fr;
     gap: 60px;
     align-items: center;
 }
