@@ -135,7 +135,11 @@ const projectData = {
             "assets/img/Bond/Screenshot_20260610-164720.jpg",
             "assets/img/Bond/Screenshot_20260610-164726.jpg",
             "assets/img/Bond/Screenshot_20260610-164731.jpg",
-            "assets/img/Bond/Screenshot_20260610-164744.jpg"
+            "assets/img/Bond/Screenshot_20260610-164744.jpg",
+            "assets/img/Bond/Screenshot_20260610-165043.jpg",
+            "assets/img/Bond/Screenshot_20260610-165050.jpg",
+            "assets/img/Bond/Screenshot_20260610-165101.jpg",
+            "assets/img/Bond/Screenshot_20260610-165144.jpg"
         ],
         description: "Project description coming soon.",
         features: [
@@ -153,7 +157,21 @@ const projectData = {
             "assets/img/Market-scan/Screenshot_20260610-165256.jpg",
             "assets/img/Market-scan/Screenshot_20260610-165304.jpg",
             "assets/img/Market-scan/Screenshot_20260610-170100.jpg",
-            "assets/img/Market-scan/Screenshot_20260610-170114.jpg"
+            "assets/img/Market-scan/Screenshot_20260610-170114.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-170128.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-170135.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-170139.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-170144.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-170153.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-170200.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-170206.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-170213.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-170417.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-170422.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-170428.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-170438.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-170447.jpg",
+            "assets/img/Market-scan/Screenshot_20260610-170503.jpg"
         ],
         description: "A robust Point of Sale (POS) and Retail Management solution integrating a cross-platform mobile app with a Node.js backend. Features fast checkout via mobile barcode scanning, real-time inventory tracking, offline capabilities using SQLite, and a custom Python web scraping pipeline for bulk-importing localized real-world product data.",
         features: [
@@ -175,7 +193,9 @@ const projectData = {
             "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172202.png",
             "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172218.png",
             "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172229.png",
-            "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172249.png"
+            "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172249.png",
+            "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172301.png",
+            "assets/img/Ai Lead Geneartion/Screenshot 2026-06-10 172319.png"
         ],
         description: "A comprehensive, autonomous lead generation and pipeline management platform designed for freelancers and agencies. It continuously scans social networks to identify high-intent prospects actively looking for specific services. Uses Google Gemini 1.5 AI to analyze and score leads, and dynamically generates highly tailored, platform-specific outreach messages.",
         features: [
@@ -258,19 +278,24 @@ function updateProjectDetails(projectId) {
         document.getElementById('project-tech').textContent = project.tech;
         document.getElementById('project-description').textContent = project.description;
         
-        // Update project images (5 images)
-        for (let i = 1; i <= 5; i++) {
-            const projectImage = document.getElementById(`project-image-${i}`);
-            const imagePlaceholder = projectImage.nextElementSibling;
-            
-            if (project.images && project.images[i-1]) {
-                projectImage.src = project.images[i-1];
-                projectImage.style.display = 'block';
-                imagePlaceholder.style.display = 'none';
-            } else {
-                projectImage.style.display = 'none';
-                imagePlaceholder.style.display = 'block';
-            }
+        // Update project images dynamically
+        const imagesGrid = document.getElementById('project-images-grid');
+        imagesGrid.innerHTML = ''; // Clear existing images
+        
+        if (project.images && project.images.length > 0) {
+            project.images.forEach((imgSrc, index) => {
+                const imgContainer = document.createElement('div');
+                imgContainer.className = 'project-detail-img-container';
+                imgContainer.style.cursor = 'zoom-in';
+                imgContainer.onclick = () => openLightbox(imgSrc);
+                
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.alt = `${project.title} Image ${index + 1}`;
+                
+                imgContainer.appendChild(img);
+                imagesGrid.appendChild(imgContainer);
+            });
         }
         
         const featuresList = document.getElementById('project-features');
@@ -309,5 +334,25 @@ function submitForm() {
         document.getElementById('contactForm').reset();
     } else {
         alert('Please fill in all fields.');
+    }
+}
+
+// Lightbox functionality
+function openLightbox(imageSrc) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    
+    if (lightbox && lightboxImg) {
+        lightboxImg.src = imageSrc;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Restore scrolling
     }
 }

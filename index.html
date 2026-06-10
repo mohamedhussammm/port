@@ -298,26 +298,7 @@
                 <div style="margin-bottom: 40px;">
                     <h3 style="color: var(--text-primary); margin-bottom: 20px; font-size: 1.5rem;">Project Screenshots</h3>
                     <div id="project-images-grid">
-                        <div class="project-detail-img-container">
-                            <img id="project-image-1" src="" alt="Project Image 1" style="display: none;">
-                            <span class="image-placeholder" style="color: var(--text-secondary); width:100%; height:100%; display:flex; align-items:center; justify-content:center;">Image 1</span>
-                        </div>
-                        <div class="project-detail-img-container">
-                            <img id="project-image-2" src="" alt="Project Image 2" style="display: none;">
-                            <span class="image-placeholder" style="color: var(--text-secondary); width:100%; height:100%; display:flex; align-items:center; justify-content:center;">Image 2</span>
-                        </div>
-                        <div class="project-detail-img-container">
-                            <img id="project-image-3" src="" alt="Project Image 3" style="display: none;">
-                            <span class="image-placeholder" style="color: var(--text-secondary); width:100%; height:100%; display:flex; align-items:center; justify-content:center;">Image 3</span>
-                        </div>
-                        <div class="project-detail-img-container">
-                            <img id="project-image-4" src="" alt="Project Image 4" style="display: none;">
-                            <span class="image-placeholder" style="color: var(--text-secondary); width:100%; height:100%; display:flex; align-items:center; justify-content:center;">Image 4</span>
-                        </div>
-                        <div class="project-detail-img-container">
-                            <img id="project-image-5" src="" alt="Project Image 5" style="display: none;">
-                            <span class="image-placeholder" style="color: var(--text-secondary); width:100%; height:100%; display:flex; align-items:center; justify-content:center;">Image 5</span>
-                        </div>
+                        <!-- Dynamic images will be inserted here -->
                     </div>
                 </div>
                 
@@ -406,6 +387,13 @@
             <p>&copy; 2025 Mohamed Hossam El Din. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Zoomed Image">
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
