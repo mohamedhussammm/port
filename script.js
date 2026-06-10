@@ -128,8 +128,8 @@ const projectData = {
         github: "https://github.com/mohamedhussammm/qa-automation"
     },
     bond: {
-        title: "Bond",
-        tech: "TBD",
+        title: "Bond – Comprehensive Retail & POS Management System",
+        tech: "Flutter, Node.js, Express.js, MongoDB",
         images: [
             "assets/img/Bond/Screenshot_20260610-164713.jpg",
             "assets/img/Bond/Screenshot_20260610-164720.jpg",
@@ -141,11 +141,15 @@ const projectData = {
             "assets/img/Bond/Screenshot_20260610-165101.jpg",
             "assets/img/Bond/Screenshot_20260610-165144.jpg"
         ],
-        description: "Project description coming soon.",
+        description: "A robust and scalable Point of Sale (POS) and Retail Management solution tailored for modern supermarkets. It bridges the gap between front-end checkout operations and back-end store management by providing a seamless, real-time ecosystem.",
         features: [
-            "Feature 1 coming soon",
-            "Feature 2 coming soon",
-            "Feature 3 coming soon"
+            "Point of Sale & Checkout with Barcode Integration",
+            "Real-time Stock Tracking and Product Lifecycle Management",
+            "Role-Based Access Control (Admin and Cashier)",
+            "Shift Tracking and Petty Cash Logging",
+            "Sales Insights and Financial Summaries Dashboards",
+            "Dynamic Network Configuration (Ngrok/Local)",
+            "Shared persistent HTTP connection pool for low latency"
         ],
         github: "https://github.com/mohamedhussammm/bond"
     },
