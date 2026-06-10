@@ -321,25 +321,6 @@ function goBackToPortfolio() {
     showPage('portfolio');
 }
 
-function downloadCV() {
-    alert('CV download functionality would be implemented here. You can link to your actual CV file.');
-}
-
-// Contact form submission
-function submitForm() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    
-    if (name && email && subject && message) {
-        alert('Thank you for your message! I will get back to you soon.');
-        // Reset form
-        document.getElementById('contactForm').reset();
-    } else {
-        alert('Please fill in all fields.');
-    }
-}
 
 // Lightbox functionality
 function openLightbox(imageSrc) {
